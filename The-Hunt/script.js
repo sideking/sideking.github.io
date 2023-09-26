@@ -36,7 +36,7 @@ let chapters = {
 
     combat : {
         titre: "Le Combat commence",
-        description: "",
+        description: "Ayant trouver l'endroit où se cachait le Diablos, vous vous approchez discretement et le prenez par surprise avec une attaque bien placé au niveau du dos. Le monstre se leve brusquement tout en vous précipitant dans les airs",
         image: "",
         bouton: []
     },

@@ -1,8 +1,8 @@
 let chapters = {
     intro : {
-        titre: "",
-        description: "",
-        image: "",
+        titre: "Mission Reçu",
+        description: "Vous avez reçu la mission de chasser un Diablos dans une région désertique",
+        image: "The-Hunt\Assets\Images\Diablos.jpg",
         bouton: []
     },
 
@@ -13,7 +13,7 @@ let chapters = {
         bouton: []
     },
 
-    mort1 : {
+    ambuscade : {
         titre: "",
         description: "",
         image: "",
@@ -41,21 +41,28 @@ let chapters = {
         bouton: []
     },
 
-    mort2 : {
+    bloquer : {
         titre: "",
         description: "",
         image: "",
         bouton: []
     },
 
-    decisif : {
+    esquiver : {
         titre: "",
         description: "",
         image: "",
         bouton: []
     },
 
-    mort3 : {
+    vide : {
+        titre: "",
+        description: "",
+        image: "",
+        bouton: []
+    },
+
+    boom : {
         titre: "",
         description: "",
         image: "",
@@ -67,5 +74,14 @@ let chapters = {
         description: "",
         image: "",
         bouton: []
-    },
+    }
+}
+
+
+function goToChapter(chapter) {
+    if (condition) {
+        
+    } else {
+        console.log("------chemin inexistant------")
+    }
 }

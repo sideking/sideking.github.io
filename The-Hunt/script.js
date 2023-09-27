@@ -91,18 +91,24 @@ let chapters = {
         bouton: [
             {titre: 'Vous dirigez vers vôtre prochaine mission', 'destination': 'debut'}]
     }
-}
+};
 
 
 function goToChapter(chapter) {
     if (chapter) {
         console.log(chapter.titre);
         console.log(chapter.description);
-        console.log(chapter.bouton);
+        console.log(chapter.bouton[0]);
+        if (chapter.bouton[1]) {
+            console.log(chapter.bouton[1]);
+        }
+        if (chapter.bouton[2]) {
+            console.log(chapter.bouton[2]);
+        }
     } else {
         console.log("------chemin inexistant------")
-    }
-}
+    };
+};
 
 
-console.log(goToChapter(chapters.intro))
+console.log(goToChapter(chapters.debut));

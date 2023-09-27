@@ -95,16 +95,17 @@ let chapters = {
 
 
 function goToChapter(chapter) {
-    if (chapter) {
-        console.log(`${chapters[chapter].titre}`);
-        console.log(`${chapters[chapter].description}`);
+    if (chapters[chapter]) {
+        console.log(chapters[chapter].titre);
+        console.log(chapters[chapter].description);
         console.log("options:");
         for (const i in chapters[chapter].bouton) {
             console.log(`-> ${chapters[chapter].bouton[i].titre} \n ${chapters[chapter].bouton[i].destination}`);
         }
     } else {
-        console.log("------chemin inexistant------")
+        console.log("------chemin inexistant------") 
     };
+    return ":^)"
 };
 
 

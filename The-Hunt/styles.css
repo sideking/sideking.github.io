@@ -68,7 +68,8 @@ button {
     background-color: var(--bleu-pale);
     color: var(--textcolor);
     font-weight: bold;
-    font-size: 25px;
+    font-size: 15px;
+    line-height: 15px;
     font-family: Arial, Helvetica, sans-serif;
     min-width: 100px;
     width: 20%;

@@ -94,7 +94,9 @@ let chapters = {
 };
 
 //audio pour ne pas devenir sourd
-let song = document.querySelector("audio").volume = 0.1;
+let song = document.querySelector("audio");
+song.volume = 0.1;
+song.play();
 
 //twist
 let twist = false;

@@ -121,7 +121,7 @@ function goToChapter(chapter) {
         //console.log("options:");
         for (const i in chapters[chapter].bouton) {
         //console.log(`-> ${chapters[chapter].bouton[i].titre} \n ${chapters[chapter].bouton[i].destination}`);
-            console.log(chapters[chapter].bouton.length);
+            //console.log(chapters[chapter].bouton.length);
             // on crée un nouveau bouton 
             const nouveauBtn = document.createElement('button'); 
             // on applique un libellé au bouton 

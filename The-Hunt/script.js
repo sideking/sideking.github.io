@@ -4,7 +4,7 @@ let chapters = {
         description: "Vous avez reçu la mission de chasser un Diablos dans une région désertique. Étant membre d'une famille de chasseur vous partez vers le désert pour y rétablir l'équilibre.",
         image: "./Assets/video/monster_showcase.mp4",
         bouton: [
-            {titre: 'Se rendre sur les lieux de la quête', 'destination': 'Type goToChapter("debut")'}]
+            {titre: 'Se rendre sur les lieux de la quête', "destination": "debut"}]
     },
 
     debut : {
@@ -12,9 +12,9 @@ let chapters = {
         description: "Vous arrivez sur le lieu de la mission, vous ne voyez pas le Diablos en question et le temps presse. Prenez-vous le temps d'envoyer un éclaireur, de partir en reconnaissance vous-même ou prend tu le risque de te dépêcher pour en finir rapidement",
         image: "./Assets/video/welcome_my_friend.mp4",
         bouton: [
-            {titre: 'Vous précipitez dans le désert', 'destination': 'Type goToChapter("embuscade")'}, 
-            {titre: 'Envoyer un éclaireur dans le désert', 'destination': 'Type goToChapter("piste")'},
-            {titre: 'Partir en reconnaissance pour trouver le monstre', 'destination': 'Type goToChapter("piste")'}]
+            {titre: 'Vous précipitez dans le désert', "destination": "embuscade"}, 
+            {titre: 'Envoyer un éclaireur dans le désert', "destination": "piste"},
+            {titre: 'Partir en reconnaissance pour trouver le monstre', "destination": "piste"}]
     },
 
     embuscade : {
@@ -22,7 +22,7 @@ let chapters = {
         description: "Le diablos vous tend une embuscade pendant votre course erratique vers son repère. Vous mourrez avant même de comprendre ce qu'il ce passe.",
         image: "./Assets/video/ambush.mp4",
         bouton: [
-            {titre: 'Vous êtes mort.', 'destination': 'Type goToChapter("debut")'}]
+            {titre: 'Vous êtes mort.', destination: function() {goToChapter("debut")}}]
     },
 
     piste : {
@@ -30,8 +30,8 @@ let chapters = {
         description: "Vous Chercher pendant une demi-heure pour finalement trouver l'emplacement de la créature, il semble qu'elle était cachée dans le sable, attendant une proie.",
         image: "./Assets/video/find_disablos.mp4",
         bouton: [
-            {titre: 'chercher les alentours', 'destination': 'Type goToChapter("chercher")'}, 
-            {titre: 'Commencer le combat', 'destination': 'Type goToChapter("combat")'}]
+            {titre: 'chercher les alentours', destination: function() {goToChapter("chercher")}}, 
+            {titre: 'Commencer le combat', destination: function() {goToChapter("combat")}}]
     },
 
     chercher : {
@@ -39,7 +39,7 @@ let chapters = {
         description: "Vous Chercher les alentours et trouvez des ruines datant de temps anciens. Vous y trouvez un objet ressemblant une bombe et la mettez dans une de vos poches",
         image: "./Assets/video/find_bomb.mp4",
         bouton: [
-            {titre: 'Commencer le combat', 'destination': 'Type goToChapter("combat")'}]
+            {titre: 'Commencer le combat', destination: function() {goToChapter("combat")}}]
     },
 
     combat : {
@@ -47,8 +47,8 @@ let chapters = {
         description: "Ayant trouver l'endroit où se cachait le Diablos, vous vous approchez discretement et le prenez par surprise avec une attaque bien placé au niveau du dos. Le monstre se leve brusquement tout en vous précipitant plusieurs mètre dans les airs. Vous tombez sur vous pied et remaquez que le Diablos fonce vers vous. ",
         image: "./Assets/video/surprise_attack.mp4",
         bouton: [
-            {titre: "Tenter de bloquer l'Attaque", 'destination': 'Type goToChapter("bloquer")'}, 
-            {titre: "Tenter de d'esquiver l'Attaque", 'destination': 'Type goToChapter("esquiver")'}]
+            {titre: "Tenter de bloquer l'Attaque", destination: function() {goToChapter("bloquer")}}, 
+            {titre: "Tenter de d'esquiver l'Attaque", destination: function() {goToChapter("esquiver")}}]
     },
 
     bloquer : {
@@ -56,7 +56,7 @@ let chapters = {
         description: "Voyant le Diablos se précipiter vers vous, vôtre corps réagi instinctivement et se met en position pour bloquer l'attaque du Diablos. Malheureusement pour vous, une des cornes du Diablos transperce facilement votre bouclier et se rend jusqu'à votre torse, vous mourrez en vous noyant dans votre propre sang.",
         image: "./Assets/video/block.mp4",
         bouton: [
-            {titre: 'Vous êtes mort.', 'destination': 'Type goToChapter("debut")'}]
+            {titre: 'Vous êtes mort.', destination: function() {goToChapter("debut")}}]
     },
 
     esquiver : {
@@ -64,8 +64,8 @@ let chapters = {
         description: "Voyant le Diablos se précipiter vers vous, vous vous jetez sur le côté tout en esquivant sa queue de justesse. Après vous être relevé vous appercevez que que le Diablos est beaucoup plus puissant que ce qui était dit par le chef de la guilde et que vous ne pourrez pas gagner sans arme plus puissantes.",
         image: "./Assets/video/dodge.mp4",
         bouton: [
-            {titre: "Continuer le combat", 'destination': 'Type goToChapter("vide")'}, 
-            {titre: "Utiliser la bombe", 'destination': 'Type goToChapter("boom")'}]
+            {titre: "Continuer le combat", destination: function() {goToChapter("vide")}}, 
+            {titre: "Utiliser la bombe", destination: function() {goToChapter("boom")}}]
     },
 
     vide : {
@@ -73,7 +73,7 @@ let chapters = {
         description: "Le Diablos fonce sur vous à nouveau sans vous laisser le temps de vous reposer. Vous essayer d'esquiver mais vôtre corps est trop fatiguer pour vous écouter. Vous tombez sur le côté et le monstre vous frappe avec sa queue, écrasant vôtre coeur et les organe environnant.",
         image: "./Assets/video/no_bomb.mp4",
         bouton: [
-            {titre: 'Vous êtes mort.', 'destination': 'Type goToChapter("debut")'}]
+            {titre: 'Vous êtes mort.', destination: function() {goToChapter("debut")}}]
     },
 
     boom : {
@@ -81,7 +81,7 @@ let chapters = {
         description: "Vous sortez la bombe de vôtre sac et la lancez dans la bouche du monstre, le tuant directement en vous aspergeant de sang et de cervelle.",
         image: "./Assets/video/boom.mp4",
         bouton: [
-            {titre: 'charcuter le monstre', 'destination': 'Type goToChapter("victoire")'}]
+            {titre: 'charcuter le monstre', destination: function() {goToChapter("victoire")}}]
     },
 
     victoire : {
@@ -89,17 +89,26 @@ let chapters = {
         description: "Malgré l'état de vôtre personne, vous etes plutôt content d'Avoir survécu à cet affrontement.",
         image: "./Assets/video/charcuter.mp4",
         bouton: [
-            {titre: 'Vous dirigez vers vôtre prochaine mission', 'destination': 'Type goToChapter("debut")'}]
+            {titre: 'Vous dirigez vers vôtre prochaine mission', destination: function() {goToChapter("debut")}}]
     }
 };
 
+//twist
+let twist = false;
+
+//parent
 let titre = document.querySelector("h1");
 let paragraphe = document.querySelector("p");
 let videoSource = document.querySelector("source");
+let button_Parent = document.querySelector("#button")
 //remove button
+  
 
 function goToChapter(chapter) {
     if (chapters[chapter]) {
+        while (button_Parent.firstChild) { 
+            button_Parent.removeChild(button_Parent.firstChild); 
+          } 
         titre.innerText = chapters[chapter].titre;
         //console.log(chapters[chapter].titre);
         videoSource.src = chapters[chapter].image;
@@ -108,7 +117,19 @@ function goToChapter(chapter) {
         //console.log(chapters[chapter].description);
         //console.log("options:");
         for (const i in chapters[chapter].bouton) {
-            //console.log(`-> ${chapters[chapter].bouton[i].titre} \n ${chapters[chapter].bouton[i].destination}`);
+        //console.log(`-> ${chapters[chapter].bouton[i].titre} \n ${chapters[chapter].bouton[i].destination}`);
+            console.log(chapters[chapter].bouton.length);
+            // on crée un nouveau bouton 
+            const nouveauBtn = document.createElement('button'); 
+            // on applique un libellé au bouton 
+            nouveauBtn.textContent = chapters[chapter].bouton[i].titre; 
+            // on appele goToChapter lorsqu'on clique le bouton 
+            nouveauBtn.addEventListener('click', () => { 
+              // la destination, c'est la destination du bouton! 
+              goToChapter(chapters[chapter].bouton[i].destination) 
+            }); 
+            // enfin, on ajoute le bouton dans la page Web (dans le DOM) 
+            button_Parent.appendChild(nouveauBtn); 
         }
     } else {
         console.log("------chemin inexistant------") 

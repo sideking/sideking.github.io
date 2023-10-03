@@ -115,27 +115,27 @@ function goToChapter(chapter) {
             button_Parent.removeChild(button_Parent.firstChild); 
           } 
         titre.innerText = chapters[chapter].titre;
-        //console.log(chapters[chapter].titre);
         videoSource.src = chapters[chapter].image;
-        //console.log(chapters[chapter].image);
         paragraphe.innerText = chapters[chapter].description;
-        //console.log(chapters[chapter].description);
-        //console.log("options:");
-        for (const i in chapters[chapter].bouton) {
-        //console.log(`-> ${chapters[chapter].bouton[i].titre} \n ${chapters[chapter].bouton[i].destination}`);
-            //console.log(chapters[chapter].bouton.length);
-            // on crée un nouveau bouton 
+        if (chapters[chapter] == chapters.chercher) {
+            twist = true;
+        }
+        if (chapters[chapter] == chapters.esquiver && twist == false) {
             const nouveauBtn = document.createElement('button'); 
-            // on applique un libellé au bouton 
-            nouveauBtn.textContent = chapters[chapter].bouton[i].titre; 
-            // on appele goToChapter lorsqu'on clique le bouton 
+            nouveauBtn.textContent = chapters[chapter].bouton[0].titre; 
             nouveauBtn.addEventListener('click', () => { 
-              // la destination, c'est la destination du bouton! 
+              goToChapter(chapters[chapter].bouton[0].destination) 
+            }); 
+            button_Parent.appendChild(nouveauBtn); 
+        } else {
+        for (const i in chapters[chapter].bouton) {
+            const nouveauBtn = document.createElement('button'); 
+            nouveauBtn.textContent = chapters[chapter].bouton[i].titre; 
+            nouveauBtn.addEventListener('click', () => { 
               goToChapter(chapters[chapter].bouton[i].destination) 
             }); 
-            // enfin, on ajoute le bouton dans la page Web (dans le DOM) 
             button_Parent.appendChild(nouveauBtn); 
-        }
+        }}
     } else {
         console.log("------chemin inexistant------") 
     };

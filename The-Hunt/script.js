@@ -9,7 +9,7 @@ let chapters = {
 
     debut : {
         titre: "La chasse commence",
-        description: "Vous arrivez sur le lieu de la mission, vous ne voyez pas le Diablos en question et le temps presse. Prenez-vous le temps d'envoyer un éclaireur, de partir en reconnaissance vous-même ou prend tu le risque de te dépêcher pour en finir rapidement",
+        description: "Vous arrivez sur le lieu de la mission, vous ne voyez pas le Diablos en question et le temps presse. Prenez-vous le temps d'envoyer un éclaireur, de partir en reconnaissance vous-même ou prend tu le risque de te dépêcher pour en finir rapidement.",
         image: "./Assets/video/welcome_my_friend.mp4",
         bouton: [
             {titre: 'Vous dépêchez', "destination": "embuscade"}, 
@@ -19,7 +19,7 @@ let chapters = {
 
     embuscade : {
         titre: "Embuscade",
-        description: "Le diablos vous tend une embuscade pendant votre course erratique vers son repère. Vous mourrez avant même de comprendre ce qu'il ce passe.",
+        description: "Le diablos vous tend une embuscade pendant votre course erratique vers son repaire. Vous mourrez avant même de comprendre ce qu'il ce passe.",
         image: "./Assets/video/ambush.mp4",
         bouton: [
             {titre: 'Vous êtes mort.', "destination": "debut"}]
@@ -36,7 +36,7 @@ let chapters = {
 
     chercher : {
         titre: "Chercher les alentours",
-        description: "Vous Chercher les alentours et trouvez des ruines datant de temps anciens. Vous y trouvez un objet ressemblant une bombe et la mettez dans une de vos poches",
+        description: "Vous Chercher les alentours et trouvez des ruines datant de temps anciens. Vous y trouvez un objet ressemblant une bombe et la mettez dans une de vos poches.",
         image: "./Assets/video/find_bomb.mp4",
         bouton: [
             {titre: 'Commencer le combat', "destination": "combat"}]
@@ -44,7 +44,7 @@ let chapters = {
 
     combat : {
         titre: "Le Combat commence",
-        description: "Ayant trouver l'endroit où se cachait le Diablos, vous vous approchez discretement et le prenez par surprise avec une attaque bien placé au niveau du dos. Le monstre se leve brusquement tout en vous précipitant plusieurs mètre dans les airs. Vous tombez sur vous pied et remaquez que le Diablos fonce vers vous. ",
+        description: "Ayant trouvé l'endroit où se cachait le Diablos, vous vous approchez discrètement et le prenez par surprise avec une attaque bien placée au niveau du dos. Le monstre se lève brusquement tout en vous précipitant plusieurs mètres dans les airs. Vous tombez sur vous pied et remaquez que le Diablos fonce vers vous.",
         image: "./Assets/video/surprise_attack.mp4",
         bouton: [
             {titre: "Bloquer l'attaque", "destination": "bloquer"}, 
@@ -53,7 +53,7 @@ let chapters = {
 
     bloquer : {
         titre: "Fer contre corne",
-        description: "Voyant le Diablos se précipiter vers vous, vôtre corps réagi instinctivement et se met en position pour bloquer l'attaque du Diablos. Malheureusement pour vous, une des cornes du Diablos transperce facilement votre bouclier et se rend jusqu'à votre torse, vous mourrez en vous noyant dans votre propre sang.",
+        description: "Voyant le Diablos se précipiter vers vous, votre corps réagi instinctivement et se met en position pour bloquer l'attaque du Diablos. Malheureusement pour vous, une des cornes du Diablos transperce facilement votre bouclier et se rend jusqu'à votre torse, vous mourrez en vous noyant dans votre propre sang.",
         image: "./Assets/video/block.mp4",
         bouton: [
             {titre: 'Vous êtes mort.', "destination": "debut"}]
@@ -61,7 +61,7 @@ let chapters = {
 
     esquiver : {
         titre: "Esquiver de justesse",
-        description: "Voyant le Diablos se précipiter vers vous, vous vous jetez sur le côté tout en esquivant sa queue de justesse. Après vous être relevé vous appercevez que que le Diablos est beaucoup plus puissant que ce qui était dit par le chef de la guilde et que vous ne pourrez pas gagner sans arme plus puissantes.",
+        description: "Voyant le Diablos se précipiter vers vous, vous vous jetez sur le côté tout en esquivant sa queue de justesse. Après vous être relevé vous apercevez que le Diablos est beaucoup plus puissant que ce qui était dit par le chef de la guilde et que vous ne pourrez pas gagner sans arme plus puissante.",
         image: "./Assets/video/dodge.mp4",
         bouton: [
             {titre: "Continuer le combat", "destination": "vide"}, 
@@ -70,7 +70,7 @@ let chapters = {
 
     vide : {
         titre: "Il va falloir faire sans",
-        description: "Le Diablos fonce sur vous à nouveau sans vous laisser le temps de vous reposer. Vous essayer d'esquiver mais vôtre corps est trop fatiguer pour vous écouter. Vous tombez sur le côté et le monstre vous frappe avec sa queue, écrasant vôtre coeur et les organe environnant.",
+        description: "Le Diablos fonce sur vous à nouveau sans vous laisser le temps de vous reposer. Vous essayer d'esquiver mais votre corps est trop fatigué pour vous écouter. Vous tombez sur le côté et le monstre vous frappe avec sa queue, écrasant votre coeur et les organes environnant.",
         image: "./Assets/video/no_bomb.mp4",
         bouton: [
             {titre: 'Vous êtes mort.', "destination": "debut"}]
@@ -78,7 +78,7 @@ let chapters = {
 
     boom : {
         titre: "Une explosion à tout casser",
-        description: "Vous sortez la bombe de vôtre sac et la lancez dans la bouche du monstre, le tuant directement en vous aspergeant de sang et de cervelle.",
+        description: "Vous sortez la bombe de votre sac et la lancez dans la bouche du monstre, le tuant directement en vous aspergeant de sang et de cervelle.",
         image: "./Assets/video/boom.mp4",
         bouton: [
             {titre: 'charcuter le monstre', "destination": "victoire"}]
@@ -86,7 +86,7 @@ let chapters = {
 
     victoire : {
         titre: "Une mission rondement menée",
-        description: "Malgré l'état de vôtre personne, vous etes plutôt content d'Avoir survécu à cet affrontement.",
+        description: "Malgré l'état de votre personne, vous etes plutôt content d'Avoir survécu à cet affrontement.",
         image: "./Assets/video/charcuter.mp4",
         bouton: [
             {titre: 'Retourner au village', "destination": "intro"}]
@@ -117,6 +117,9 @@ function goToChapter(chapter) {
         titre.innerText = chapters[chapter].titre;
         videoSource.src = chapters[chapter].image;
         paragraphe.innerText = chapters[chapter].description;
+        if (chapters[chapter] == chapters.intro) {
+            twist = false;
+        }
         if (chapters[chapter] == chapters.chercher) {
             twist = true;
         }

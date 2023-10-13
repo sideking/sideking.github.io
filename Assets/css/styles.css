@@ -1,0 +1,85 @@
+@font-face {
+    font-family: "MonsterHunter";
+    src: url(./Assets/fonts/monsterhunter.ttf) format("truetype");
+}
+
+:root {
+    --textcolor: #000000;
+    --brun: #BF7245;
+    --bleu-pale: #55D9FF;
+    --bleu-fonce: #118EB2;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    color: var(--textcolor);
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100vw;
+    background-image: url(../Images/QuestBG17.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0% 100%;
+    backdrop-filter: blur(5px);
+}
+
+#jeu {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--brun);
+    width: 60%;
+    min-width: 400px;
+    max-width: 900px;
+    height: 900px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+h1 {
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#video {
+    width: 90%;
+}
+
+p {
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 5% 0 5%;
+    color: var(--textcolor);
+}
+
+#button {
+    display: flex;
+    align-items: center; 
+    justify-content: space-around;
+    width: 90%;
+}
+
+button {
+    background-color: var(--bleu-pale);
+    color: var(--textcolor);
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    min-width: 100px;
+    width: 20%;
+    height: 35px;
+    border-radius: 50px;
+    transition-duration: 1s;
+}
+
+button:hover {
+    background-color: var(--bleu-fonce);
+    filter: drop-shadow(0px 0px 20px #55D9FF);
+
+}

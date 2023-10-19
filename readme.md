@@ -1,4 +1,4 @@
-![LOGO](The-Hunt/Assets/Images/LOGO.PNG)
+![LOGO](./Assets/Images/LOGO.PNG)
 
 [Développement web - Projet vous êtes le héros](https://smnarnold.com/projets/vous-etes-le-heros)
 
@@ -9,4 +9,4 @@
 **Palette de couleurs :** https://coolors.co/000000-bf7245-55d9ff-118eb2
 
 ## Diagramme :
-![Diagramme](The-Hunt/Assets/drawio/Schema.png)
+![Diagramme](./Assets/drawio/Schema.png)

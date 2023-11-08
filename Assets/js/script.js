@@ -109,6 +109,7 @@ let song = document.querySelector("#musique");
 song.volume = 0.1;
 let questStart = "./Assets/music/Proof of a Hero.mp3";
 let questEnd = "./Assets/music/Monster Hunter_ World - Quest Clear [Music].mp3";
+let questFail = "./Assets/music/Monster Hunter World OST_ Quest Failed Theme QUEST FAILED [HQ _ 4K].mp3";
 
 //twist
 let twist = false;
@@ -129,11 +130,15 @@ function goToChapter(chapter) {
         titre.innerText = chapterNow.titre;
         videoSource.src = chapterNow.video;
         paragraphe.innerText = chapterNow.description;
+
         if (chapterNow == chapters.debut) {
             song.src = questStart
         } else if (chapterNow == chapters.victoire) {
             song.src = questEnd
+        } else if (chapterNow == chapters.embuscade || chapterNow == chapters.bloquer || chapterNow == chapters.vide) {
+            song.src = questFail
         }
+
         if (chapterNow == chapters.intro) {
 
         } else {

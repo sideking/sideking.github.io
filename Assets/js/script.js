@@ -104,12 +104,16 @@ const chapters = {
     }
 };
 
-//audio pour ne pas devenir sourd
+//audio
 let song = document.querySelector("#musique");
+let effects = document.querySelector("#bruitage");
 song.volume = 0.1;
 let questStart = "./Assets/music/Proof of a Hero.mp3";
 let questEnd = "./Assets/music/Monster Hunter_ World - Quest Clear [Music].mp3";
 let questFail = "./Assets/music/Monster Hunter World OST_ Quest Failed Theme QUEST FAILED [HQ _ 4K].mp3";
+let click = "./Assets/sound_effect/click_button.wav"
+
+
 
 //twist
 let twist = false;
@@ -143,6 +147,9 @@ function goToChapter(chapter) {
 
         } else {
             song.play()
+            effects.src = click
+            effects.pause()
+            effects.play()
         }
         
         if (chapterNow == chapters.debut) {

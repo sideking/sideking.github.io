@@ -82,3 +82,29 @@ button:hover {
     background-color: var(--bleu-fonce);
     filter: drop-shadow(0px 0px 20px #55D9FF);
 }
+
+.win {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100px;
+}
+
+.death {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 100px;
+}
+
+.hidden {
+    display: none;
+}
+
+#reset {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    width: 10%;
+    height: 5%;
+}

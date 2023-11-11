@@ -108,17 +108,26 @@ const chapters = {
 let song = document.querySelector("#musique");
 let effects = document.querySelector("#bruitage");
 song.volume = 0.1;
-let questStart = "./Assets/music/Proof of a Hero.mp3";
-let questEnd = "./Assets/music/Monster Hunter_ World - Quest Clear [Music].mp3";
-let questFail = "./Assets/music/Monster Hunter World OST_ Quest Failed Theme QUEST FAILED [HQ _ 4K].mp3";
+let questStart = "./Assets/music/Proof_of_a_Hero.mp3";
+let questEnd = "./Assets/music/Monster_Hunter_World_Quest_Clear.mp3";
+let questFail = "./Assets/music/Monster_Hunter_World_OST_Quest_Failed_Theme_QUEST_FAILED.mp3";
 let click = "./Assets/sound_effect/click_button.wav"
 
 
 
-//twist
-let twist = false;
+//twist / trophy
 let win = document.querySelector("#trophy1");
+
 let death = document.querySelector("#trophy2");
+
+let speedrun = document.querySelector("#trophy3");
+let slowAss = false;
+(function () {
+        setTimeout(function() {slowAss = true},60000)
+})();
+
+let hunter = document.querySelector("#trophy4");
+let numberOfKill = 0;
 
 //parent
 let titre = document.querySelector("h1");
@@ -158,22 +167,32 @@ function goToChapter(chapter) {
         
         //twist allower
         if (chapterNow == chapters.debut) {
-            twist = false;
+            localStorage.setItem("twist", `false`);
         }
         if (chapterNow == chapters.chercher) {
-            twist = true;
+            localStorage.setItem("twist", `true`);
         }
+        let twist = localStorage.getItem("twist");
+        //alert(twist)
 
         //trophy
-        if (chapterNow == chapters.victoire) {
-            win.classList.remove("hidden")
+        if (chapterNow == chapters.victoire && slowAss == false) {
+            speedrun.classList.remove("hidden");
+            win.classList.remove("hidden");
+            numberOfKill++;
+        } else if (chapterNow == chapters.victoire) {
+            win.classList.remove("hidden");
+            numberOfKill++;
         }
         if (chapterNow == chapters.embuscade || chapterNow == chapters.bloquer || chapterNow == chapters.vide) {
-            death.classList.remove("hidden")
+            death.classList.remove("hidden");
+        }
+        if (numberOfKill >= 5) {
+            hunter.classList.remove("hidden");
         }
 
-
-        if (chapterNow == chapters.esquiver && twist == false) {
+        console.log(numberOfKill)
+        if (chapterNow == chapters.esquiver && twist == "false") {
             const nouveauBtn = document.createElement('button');
             nouveauBtn.textContent = chapterNow.bouton[0].titre;
             nouveauBtn.addEventListener('click', () => {
@@ -204,8 +223,13 @@ if (lieu != undefined) {
     goToChapter("intro");
 }
 
+let rewind = new Audio("./Assets/sound_effect/Tape_Rewind_Sound_effect.mp3")
+rewind.volume = 0.2;
+
 document.querySelector("#reset").addEventListener("click", function() {
+    rewind.play();
     twist = false;
+    numberOfKill = 0
 
     if (win.classList.contains("hidden")) {
         
@@ -216,6 +240,16 @@ document.querySelector("#reset").addEventListener("click", function() {
         
     } else {
         death.classList.add("hidden")
+    }
+    if (speedrun.classList.contains("hidden")) {
+        
+    } else {
+        speedrun.classList.add("hidden")
+    }
+    if (hunter.classList.contains("hidden")) {
+        
+    } else {
+        hunter.classList.add("hidden")
     }
 
     localStorage.clear()

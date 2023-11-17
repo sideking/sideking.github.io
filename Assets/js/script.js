@@ -1,4 +1,15 @@
 const chapters = {
+    village: {
+        titre: "Bienvenu chez vous!",
+        description: "De retour au village, vous prenez un court repos d’une semaine avant de choisir votre prochaine mission. Cette mission, bien sûr, sera de chasser un monstre pour rétablir l’équilibre du lieu.",
+        video: "./Assets/video/monster_showcase.mp4",
+        location: "village",
+        bouton: [
+            { titre: 'Chasser un Diablos', destination: "intro" },
+            { titre: 'En construction!', destination: "inexistant"},
+        ]
+    },
+
     intro: {
         titre: "Mission Reçu",
         description: "Vous avez reçu la mission de chasser un Diablos dans une région désertique. Étant membre d’une famille de chasseurs, vous partez vers le désert pour y rétablir l’équilibre.",
@@ -100,7 +111,7 @@ const chapters = {
         video: "./Assets/video/charcuter.mp4",
         location: "victoire",
         bouton: [
-            { titre: 'Retourner au village', destination: "intro" }]
+            { titre: 'Retourner au village', destination: "village" }]
     }
 };
 
@@ -137,11 +148,23 @@ let button_Parent = document.querySelector("#button")
 
 function goToChapter(chapter) {
     if (chapters[chapter]) {
+
+        let chapterNow = chapters[chapter];
+
         //remove button
         while (button_Parent.firstChild) {
             button_Parent.removeChild(button_Parent.firstChild);
         }
-        let chapterNow = chapters[chapter];
+
+        if (chapterNow == chapters.village) {
+            document.querySelector('body').style.backgroundImage="url('./Assets/Images/village.webp')";
+            videoSource.classList.add("hidden")
+        } else if (chapterNow == chapters.intro) {
+            document.querySelector('body').style.backgroundImage="url('./Assets/Images/QuestBG17.webp')";
+            videoSource.classList.remove("hidden");
+        }
+
+        
         titre.innerText = chapterNow.titre;
         videoSource.src = chapterNow.video;
         paragraphe.innerText = chapterNow.description;

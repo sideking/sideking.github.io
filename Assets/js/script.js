@@ -1,15 +1,4 @@
 const chapters = {
-    village: {
-        titre: "Bienvenu chez vous!",
-        description: "De retour au village, vous prenez un court repos d’une semaine avant de choisir votre prochaine mission. Cette mission, bien sûr, sera de chasser un monstre pour rétablir l’équilibre du lieu.",
-        video: "./Assets/video/monster_showcase.mp4",
-        location: "village",
-        bouton: [
-            { titre: 'Chasser un Diablos', destination: "intro" },
-            { titre: 'En construction!', destination: "inexistant"},
-        ]
-    },
-
     intro: {
         titre: "Mission Reçu",
         description: "Vous avez reçu la mission de chasser un Diablos dans une région désertique. Étant membre d’une famille de chasseurs, vous partez vers le désert pour y rétablir l’équilibre.",
@@ -111,18 +100,47 @@ const chapters = {
         video: "./Assets/video/charcuter.mp4",
         location: "victoire",
         bouton: [
-            { titre: 'Retourner au village', destination: "village" }]
+            { titre: 'Retourner au village', destination: "intro" }]
     }
 };
 
 //audio
 let song = document.querySelector("#musique");
 let effects = document.querySelector("#bruitage");
+let rewind = new Audio("./Assets/sound_effect/Tape_Rewind_Sound_effect.mp3");
+
 song.volume = 0.1;
+rewind.volume = 0.2;
+
 let questStart = "./Assets/music/Proof_of_a_Hero.mp3";
 let questEnd = "./Assets/music/Monster_Hunter_World_Quest_Clear.mp3";
 let questFail = "./Assets/music/Monster_Hunter_World_OST_Quest_Failed_Theme_QUEST_FAILED.mp3";
 let click = "./Assets/sound_effect/click_button.wav"
+
+let muteBox = document.querySelector("input");
+muteBox.addEventListener("change", function(){
+    localStorage.setItem("muteBox", `${muteBox.checked}`)
+    if (localStorage.getItem("muteBox") == "true") {
+        song.volume = 0.1;
+        rewind.volume = 0.2;
+        effects.volume = 1;
+    } else {
+        song.volume = 0;
+        rewind.volume = 0;
+        effects.volume = 0;
+    }
+})
+
+if (localStorage.getItem("muteBox") == "true") {
+    document.querySelector("input").checked = true
+    song.volume = 0.1;
+    rewind.volume = 0.2;
+    effects.volume = 1;
+} else {
+    song.volume = 0;
+    rewind.volume = 0;
+    effects.volume = 0;
+}
 
 
 
@@ -148,6 +166,9 @@ let button_Parent = document.querySelector("#button")
 
 function goToChapter(chapter) {
     if (chapters[chapter]) {
+        //testing area
+        //alert(muteVar.checked)
+        //
 
         let chapterNow = chapters[chapter];
 
@@ -246,8 +267,7 @@ if (lieu != undefined) {
     goToChapter("intro");
 }
 
-let rewind = new Audio("./Assets/sound_effect/Tape_Rewind_Sound_effect.mp3")
-rewind.volume = 0.2;
+
 
 document.querySelector("#reset").addEventListener("click", function() {
     rewind.play();
